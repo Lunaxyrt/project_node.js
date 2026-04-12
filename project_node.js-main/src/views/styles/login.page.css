@@ -1,0 +1,185 @@
+/* Full-screen violet gradient */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #3a00b8, #7a00ff, #b000ff);
+  background-size: 300% 300%;
+  animation: bgShift 10s ease infinite;
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Center wrapper */
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main login card */
+.login-card {
+  width: 750px;
+  padding: 80px 70px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 35px;
+  backdrop-filter: blur(25px);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Avatar */
+.avatar {
+  width: 180px;
+  height: 180px;
+  background: #0a1a4a;
+  border-radius: 50%;
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  color: white;
+  box-shadow: 0 0 40px rgba(0, 200, 255, 0.6);
+}
+.login-box {
+  width: 520px;        /* was 650–750px */
+  padding: 55px 45px;  /* smaller padding */
+  border-radius: 28px;
+}
+
+.avatar {
+  width: 130px;        /* was 160px */
+  height: 130px;
+  font-size: 70px;     /* was 85–100px */
+  margin-bottom: 35px;
+}
+
+.login-box h1 {
+  font-size: 42px;     /* was 50–60px */
+  margin-bottom: 40px;
+}
+
+.login-box input {
+  padding: 22px;       /* was 25–30px */
+  font-size: 22px;     /* was 28px */
+}
+
+.login-btn {
+  padding: 28px;       /* was 35px */
+  font-size: 30px;     /* was 40px */
+  margin-top: 40px;
+}
+
+/* Title */
+.login-card h1 {
+  font-size: 60px;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+/* Inputs */
+.input-group input {
+  width: 100%;
+  padding: 30px;
+  margin: 25px 0;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 28px;
+  border-radius: 15px;
+  border-bottom: 5px solid #4dd0ff;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-bottom-color: #00eaff;
+  box-shadow: 0 0 25px #00eaff;
+}
+
+/* Blue gradient button */
+.login-btn {
+  width: 100%;
+  padding: 35px;
+  margin-top: 55px;
+  background: linear-gradient(135deg, #0066ff, #0099ff, #00ccff);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 3px;
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.6);
+}
+
+.login-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 50px #00eaff;
+}
+
+/* Flying particles background */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particles span {
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+  animation: floatUp 12s linear infinite;
+  opacity: 0.8;
+   animation: floatUp 6s linear infinite;
+}
+
+/* Random particle positions */
+.particles span:nth-child(1) { left: 10%; animation-duration: 14s; width: 8px; height: 8px; }
+.particles span:nth-child(2) { left: 25%; animation-duration: 18s; }
+.particles span:nth-child(3) { left: 40%; animation-duration: 16s; width: 10px; height: 10px; }
+.particles span:nth-child(4) { left: 55%; animation-duration: 20s; }
+.particles span:nth-child(5) { left: 70%; animation-duration: 15s; width: 7px; height: 7px; }
+.particles span:nth-child(6) { left: 85%; animation-duration: 22s; }
+.particles span:nth-child(7) { left: 15%; animation-duration: 19s; }
+.particles span:nth-child(8) { left: 35%; animation-duration: 17s; width: 9px; height: 9px; }
+.particles span:nth-child(9) { left: 60%; animation-duration: 21s; }
+.particles span:nth-child(10) { left: 80%; animation-duration: 13s; }
+
+/* Floating animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(110vh) scale(0.6);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+
+
