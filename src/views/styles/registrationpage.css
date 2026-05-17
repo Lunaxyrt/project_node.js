@@ -52,9 +52,12 @@ body {
     transform: translateY(-50%);
     background: none;
     border: none;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
+    color: #222;
+    padding: 0;
 }
+
 
 .register-btn {
     width: 150px;

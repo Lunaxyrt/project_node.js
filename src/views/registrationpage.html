@@ -48,12 +48,13 @@
     </div>
 
     <script>
-        function togglePassword(id, btn) {
+            function togglePassword(id, btn) {
             const field = document.getElementById(id);
             field.type = field.type === "password" ? "text" : "password";
-            btn.textContent = field.type === "password" ? "👁" : "🚫";
-        }
+            btn.textContent = field.type === "password" ? "👁" : "👁️‍🗨️";
+    }
     </script>
+
 
 <script type="module">
     import { validateRegistration } from "../utils/validationSchemas.mjs";
