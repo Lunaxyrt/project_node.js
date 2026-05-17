@@ -1,9 +1,22 @@
-import express from 'express';
+import express from 'express'
+import db from './db.mjs'
 
-const app = express();
+const app = express()
+app.use(express.json())
 
-const PORT = process.env.PORT || 3000;
+app.post('/register', (req, res) => {
+    const { username, password, email } = req.body
 
-app.listen(PORT, () => {
-    console.log(`Running on Port ${PORT}`);
+    db.run(
+        `INSERT INTO users (username, password, email) VALUES (?, ?, ?)`,
+        [username, password, email],
+        function (err) {
+            if (err) {
+                return res.status(400).json({ error: err.message })
+            }
+            res.json({ success: true, id: this.lastID })
+        }
+    )
 })
+
+app.listen(3000, () => console.log('Server running'))

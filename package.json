@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "express": "^5.2.1",
-    "joi": "^18.2.1"
+    "joi": "^18.2.1",
+    "sqlite3": "^6.0.1"
   },
   "name": "project_node",
   "version": "1.0.0",
