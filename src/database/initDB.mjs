@@ -1,18 +1,20 @@
-import sqlite3 from 'sqlite3'
-sqlite3.verbose()
+import db from './db.mjs'
 
-const db = new sqlite3.Database('./database.db')
-
-db.serialize(() => {
+const initDB = () => {
+  db.serialize(() => {
     db.run(`
-        CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            username TEXT UNIQUE,
-            password TEXT,
-            email TEXT UNIQUE
-        )
-    `)
-})
+      CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    `, (err) => {
+      if (err) console.error('❌ Failed to create users table:', err.message)
+      else console.log('✅ Users table ready')
+    })
+  })
+}
 
-console.log("Database initialized")
-db.close()
+export default initDB
