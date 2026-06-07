@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import express from "express";
 import { db } from "../database/db.mjs";
 import { validateRegistration } from "../utils/validationSchemas.mjs";
@@ -33,16 +32,3 @@ router.post("/register", (req, res) => {
 });
 
 export default router;
-=======
-import { registerSchema } from "./validationSchemas.mjs";
-
-app.post("/register", async (req, res) => {
-    const { error } = registerSchema.validate(req.body);
-
-    if (error) {
-        return res.status(400).json({ error: error.details[0].message });
-    }
-
-    res.json({ message: "OK" });
-});
->>>>>>> 9081d7c8c23f3f456dd1c5553a812d9931b1885a
